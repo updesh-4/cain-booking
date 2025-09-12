@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from "./button";
 import { useNavigate } from 'react-router-dom';
 import FormData from "./FormData";
+import Logo from "../../assets/logo.jpg";
 
 
 const centersData = {
@@ -25,7 +26,7 @@ export default function Navbar() {
     <nav className="flex items-center space-x-6 px-8 py-4 shadow-md bg-white fixed top-0 left-0 right-0 z-50">
       {/* Logo */}
        <Link to="/">
-  <img src="image.png" alt="Power Grid Logo" className="h-10 w-40 cursor-pointer" />
+  <img src={Logo} alt="Power Grid Logo" className="h-10 w-40 cursor-pointer" />
 </Link>
 
       {/* Nav Links */}
@@ -85,6 +86,8 @@ export default function Navbar() {
         {/* <li><a href="#">Investor Relations</a></li> */}
         {/* <li><a href="#">Referrals</a></li> */}
       </ul>
+      <Link to="/BookSlot"  className="font-medium hover:underline hover:decoration-2 hover:underline-offset-4 flex items-center" >Book a Slot</Link>
+      <Link to="/Dashboard"  className="font-medium hover:underline hover:decoration-2 hover:underline-offset-4 flex items-center" >Dashboard</Link>
 
        <div className="flex-grow"></div>
       
@@ -98,7 +101,12 @@ export default function Navbar() {
   180012377888
 </a>
         </span>
-        <a href="#" className="text-sm font-medium hover:underline hover:decoration-2 hover:underline-offset-4">Log in</a>
+       <button
+        onClick={() => window.open("/login", "_blank", "width=600,height=700")}
+        className="bg-blue-600 text-white px-4 py-2 rounded-md"
+        >
+          Log in
+        </button>
        <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-2 rounded-lg" onClick={handleClick}>Get in touch</Button>
       </div>
     </nav>
