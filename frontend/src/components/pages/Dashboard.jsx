@@ -133,7 +133,7 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen p-8 bg-gray-50 font-sans">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto mt-28">
         <h1 className="text-4xl font-extrabold text-slate-800 text-center mb-8">Your Bookings Dashboard</h1>
         
         {/* Check if there are any bookings to display */}

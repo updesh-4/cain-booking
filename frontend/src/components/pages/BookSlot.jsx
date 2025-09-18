@@ -69,8 +69,8 @@ export default function CabinBookingForm() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4 font-sans">
-      <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-2xl border border-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4 font-sans ">
+      <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-2xl border border-gray-100 mt-32">
         <h2 className="text-3xl font-extrabold text-slate-800 mb-6 text-center">Book Your Professional Workspace</h2>
         
         {/* Confirmation Message */}
