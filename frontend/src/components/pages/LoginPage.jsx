@@ -11,7 +11,7 @@ export default function LoginPage() {
     console.log("Sending OTP request for:", email); // ✅ Added log
 
     try {
-      const response = await axios.post("http://localhost:5000/send-otp", {
+      const response = await axios.post("http://localhost:5000/api/send-otp", {
         email,
       });
 
