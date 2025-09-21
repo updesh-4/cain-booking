@@ -1014,20 +1014,37 @@ const app = express();
 connectDB();
 
 // Middleware - CORRECTED CORS CONFIGURATION
+// app.use(cors({
+//   origin: process.env.NODE_ENV === 'production' 
+//     ? ['https://cain-booking-fr.onrender.com',
+//       'https://backend-cabin.onrender.com',
+//       'http://localhost:5173',  // Add this
+//         'http://localhost:5174'
+//     ] // Replace with your actual domain
+//     : [
+//         'http://localhost:3000',  // Create React App
+//         'http://localhost:5173',  // Vite default
+//         'http://localhost:5174',  // Your current Vite port
+//         'http://localhost:4173',  // Vite preview
+//         'http://localhost:8080'   // Alternative dev port
+//       ],
+//   credentials: true,
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization']
+// }));
+// Middleware - CORS CONFIGURATION allowing localhost in production
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? ['https://cain-booking-fr.onrender.com',
-      'https://backend-cabin.onrender.com',
-      'http://localhost:5173',  // Add this
-        'http://localhost:5174'
-    ] // Replace with your actual domain
-    : [
-        'http://localhost:3000',  // Create React App
-        'http://localhost:5173',  // Vite default
-        'http://localhost:5174',  // Your current Vite port
-        'http://localhost:4173',  // Vite preview
-        'http://localhost:8080'   // Alternative dev port
-      ],
+  origin: [
+    // Production frontend
+    'https://cain-booking-fr.onrender.com',
+    'https://backend-cabin.onrender.com',
+    // Local development
+    'http://localhost:5173',
+    'http://localhost:5174',
+    'http://localhost:3000',
+    'http://localhost:4173',
+    'http://localhost:8080'
+  ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
