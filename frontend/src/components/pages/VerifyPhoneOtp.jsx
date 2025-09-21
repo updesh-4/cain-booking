@@ -500,7 +500,7 @@ export default function VerifyPhoneOtp() {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:5000/api/verify-phone-otp", {
+      const response = await axios.post("https://backend-cabin.onrender.com/api/send-phone-otp/api/verify-phone-otp", {
         phone: phone.trim(),
         otp: enteredOtp,
       });

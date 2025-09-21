@@ -270,7 +270,7 @@ export default function NewUserPhoneEntry() {
       // ✅ Store intended redirect path before continuing
       localStorage.setItem("postLoginRedirect", location.state?.from?.pathname || "/");
 
-      const response = await axios.post("http://localhost:5000/api/send-phone-otp", {
+      const response = await axios.post("https://backend-cabin.onrender.com/api/send-phone-otp", {
         phone: formattedPhone,
       });
 

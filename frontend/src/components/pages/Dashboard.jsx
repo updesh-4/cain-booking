@@ -63,7 +63,7 @@ const Dashboard = () => {
   const fetchBookings = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/book');
+      const response = await fetch('https://backend-cabin.onrender.com/api/book');
       const data = await response.json();
       if (data.success) {
         setBookings(data.bookings);
