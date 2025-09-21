@@ -1242,14 +1242,22 @@ app.use('/api/*', (req, res) => {
   });
 });
 
-// ✅ Serve frontend for all routes (React Router fallback)
-app.use(express.static(path.join(__dirname, "dist"))); // Adjust if using Vite or CRA
+// // ✅ Serve frontend for all routes (React Router fallback)
+// app.use(express.static(path.join(__dirname, "dist"))); // Adjust if using Vite or CRA
 
+// Root endpoint for backend API
 app.get('/', (req, res) => {
   res.json({ 
     message: 'Backend API is running!', 
     status: 'success',
-    timestamp: new Date()
+    timestamp: new Date(),
+    endpoints: {
+      health: '/api/health',
+      contact: '/api/contact/*',
+      book: '/api/book/*',
+      sendOtp: '/api/send-otp',
+      verifyOtp: '/api/verify-otp'
+    }
   });
 });
 
