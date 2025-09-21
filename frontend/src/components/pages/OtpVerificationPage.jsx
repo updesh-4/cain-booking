@@ -833,7 +833,7 @@ export default function OtpVerificationPage() {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:5000/api/verify-otp", {
+      const response = await axios.post("https://backend-cabin.onrender.com/api/send-phone-otp/api/verify-otp", {
         email: email.trim(),
         otp: enteredOtp,
       });
