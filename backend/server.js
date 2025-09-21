@@ -1016,13 +1016,9 @@ connectDB();
 // Middleware - CORRECTED CORS CONFIGURATION
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-<<<<<<< HEAD
     ? ['https://cain-booking-fr.onrender.com',
       'https://backend-cabin.onrender.com'
     ] // Replace with your actual domain
-=======
-    ? ['https://cain-booking-fr.onrender.com/'] // Replace with your actual domain
->>>>>>> 1a7ffbbf00cecef7c289e22bfd11fc1627b53315
     : [
         'http://localhost:3000',  // Create React App
         'http://localhost:5173',  // Vite default
