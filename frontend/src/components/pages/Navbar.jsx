@@ -359,7 +359,7 @@ export default function Navbar() {
     window.addEventListener("storage", handleCustomStorageEvent);
     
     // ✅ Also check periodically in case events are missed
-    const intervalId = setInterval(checkLogin, 1000);
+    const intervalId = setInterval(checkLogin, 30000);
 
     return () => {
       window.removeEventListener("storage", handleStorageChange);
@@ -517,11 +517,7 @@ export default function Navbar() {
       </div>
 
       {/* ✅ Debug info (remove in production) */}
-      {process.env.NODE_ENV === 'development' && (
-        <div className="fixed bottom-4 right-4 bg-black text-white text-xs p-2 rounded">
-          Login: {isLoggedIn ? 'true' : 'false'}
-        </div>
-      )}
+        
     </nav>
   );
 }
