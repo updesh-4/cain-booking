@@ -1017,7 +1017,9 @@ connectDB();
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
     ? ['https://cain-booking-fr.onrender.com',
-      'https://backend-cabin.onrender.com'
+      'https://backend-cabin.onrender.com',
+      'http://localhost:5173',  // Add this
+        'http://localhost:5174'
     ] // Replace with your actual domain
     : [
         'http://localhost:3000',  // Create React App

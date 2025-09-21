@@ -298,7 +298,7 @@ const isFormValid = () => {
       setLoading(true);
 
   try {
-    const response = await axios.post("http://localhost:5000/api/book", bookingData);
+    const response = await axios.post("https://backend-cabin.onrender.com/api/book", bookingData);
     console.log("Booking response:", response.data);
     setShowConfirmation(true);
   } catch (error) {

@@ -100,7 +100,7 @@ const Dashboard = () => {
   const handleSaveChanges = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/book/${editingBooking._id}`,
+        `https://backend-cabin.onrender.com/api/book/${editingBooking._id}`,
         {
           method: 'PUT',
           headers: {
@@ -131,7 +131,7 @@ const Dashboard = () => {
   const handleDelete = async (bookingId) => {
     if (window.confirm('Are you sure you want to delete this booking?')) {
       try {
-        const response = await fetch(`http://localhost:5000/api/book/${bookingId}`, {
+        const response = await fetch(`https://backend-cabin.onrender.com/api/book/${bookingId}`, {
           method: 'DELETE',
         });
         
