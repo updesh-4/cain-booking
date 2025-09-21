@@ -1243,8 +1243,12 @@ app.use('/api/*', (req, res) => {
 // ✅ Serve frontend for all routes (React Router fallback)
 app.use(express.static(path.join(__dirname, "dist"))); // Adjust if using Vite or CRA
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist", "index.html")); // Ensure this path matches your build output
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Backend API is running!', 
+    status: 'success',
+    timestamp: new Date()
+  });
 });
 
 // ✅ Start server
