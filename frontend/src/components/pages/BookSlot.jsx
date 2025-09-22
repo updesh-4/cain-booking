@@ -298,7 +298,7 @@ const isFormValid = () => {
       setLoading(true);
 
   try {
-    const response = await axios.post("https://backend-cabin.onrender.com/api/book", bookingData);
+    const response = await axios.post("http://localhost:5000/api/book", bookingData);
     console.log("Booking response:", response.data);
     setShowConfirmation(true);
   } catch (error) {
@@ -432,12 +432,12 @@ const isFormValid = () => {
           </div>
         </div>
 
-        {/* Price Display */}
+        {/* Price Display
         <div className="text-center mb-6">
           <p className="text-2xl font-bold text-slate-800">
             Total Price: <span className="text-blue-600">  ₹{totalPrice}</span>
           </p>
-        </div>
+        </div> */}
 
         {/* Spinner */}
 {loading && (
@@ -456,7 +456,7 @@ const isFormValid = () => {
       : "bg-gray-300 text-gray-500 cursor-not-allowed"
   }`}
 >
-  {loading ? "Processing..." : "Confirm and Proceed to Payment"}
+  {loading ? "Processing..." : "Confirm and Proceed"}
 </button>
       </div>
     </div>

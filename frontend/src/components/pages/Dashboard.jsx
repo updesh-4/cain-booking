@@ -63,7 +63,7 @@ const Dashboard = () => {
   const fetchBookings = async () => {
     try {
       setLoading(true);
-      const response = await fetch('https://backend-cabin.onrender.com/api/book');
+      const response = await fetch('http://localhost:5000/api/book');
       const data = await response.json();
       if (data.success) {
         setBookings(data.bookings);
@@ -100,7 +100,7 @@ const Dashboard = () => {
   const handleSaveChanges = async () => {
     try {
       const response = await fetch(
-        `https://backend-cabin.onrender.com/api/book/${editingBooking._id}`,
+        `http://localhost:5000/api/book/${editingBooking._id}`,
         {
           method: 'PUT',
           headers: {
@@ -131,7 +131,7 @@ const Dashboard = () => {
   const handleDelete = async (bookingId) => {
     if (window.confirm('Are you sure you want to delete this booking?')) {
       try {
-        const response = await fetch(`https://backend-cabin.onrender.com/api/book/${bookingId}`, {
+        const response = await fetch(`http://localhost:5000/api/book/${bookingId}`, {
           method: 'DELETE',
         });
         
@@ -175,7 +175,7 @@ const Dashboard = () => {
         </div>
         
         {/* Summary Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
             <h3 className="text-lg font-semibold text-gray-700 mb-2">Total Bookings</h3>
             <p className="text-3xl font-bold text-blue-600">{bookings.length}</p>
@@ -186,12 +186,12 @@ const Dashboard = () => {
               {bookings.filter(b => new Date(b.date) >= new Date()).length}
             </p>
           </div>
-          <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+          {/* <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
             <h3 className="text-lg font-semibold text-gray-700 mb-2">Total Spent</h3>
             <p className="text-3xl font-bold text-purple-600">
               ₹{bookings.reduce((sum, b) => sum + (b.totalPrice || 0), 0)}
             </p>
-          </div>
+          </div> */}
         </div>
 
         {/* Bookings List */}
